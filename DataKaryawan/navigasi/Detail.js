@@ -2,8 +2,11 @@ import * as React from 'react';
 import { View, Text, StyleSheet, Button, Image, Linking } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { Title, Card } from 'react-native-paper';
-import { color } from 'react-native-reanimated';
+// import { color } from 'react-native-reanimated';
 // import { MaterialIcon, Entypo } from 'react-native-vector-icons';
+import email from '../icon/email.png';
+import call from '../icon/call.png';
+import dollar from '../icon/dollar.png';
 
 const Detail = ({navigation, route}) => {
     const {karyawan} = route.params
@@ -20,22 +23,25 @@ const Detail = ({navigation, route}) => {
                 <Text style={{fontSize:14, color:'grey'}}>{karyawan.jabatan}</Text>
             </View>
             <Card style={{margin:3}}
-            onPress={()=>{Linking.openURL('mailto:${karyawan.email}')}}>
+            onPress={()=>{Linking.openURL(`mailto:${karyawan.email}&subject`)}}>
                 <View style={{flexDirection:"row", padding:8}}>
                     {/* <MaterialIcon name="email" size={32} color="#006aff" /> */}
+                    <Image source={email} style={{width:30, height:30}} />
                     <Text style={styles.teks}>{karyawan.email}</Text>
                 </View>
             </Card>
             <Card style={{margin:3}}
-            onPress={()=>{Linking.openURL('tel:${karyawan.telp}')}}>
+            onPress={()=>{Linking.openURL(`tel:${karyawan.telp}`)}}>
                 <View style={{flexDirection:"row", padding:8}}>
                     {/* <Entypo name="phone" size={32} color="#006aff" /> */}
+                    <Image source={call} style={{width:30, height:30}} />
                     <Text style={styles.teks}>{karyawan.telp}</Text>
                 </View>
             </Card>
             <Card style={{margin:3}} >
                 <View style={{flexDirection:"row", padding:8}}>
                     {/* <MaterialIcon name="attach-money" size={32} color="#006aff" /> */}
+                    <Image source={dollar} style={{width:30, height:30}} />
                     <Text style={styles.teks}>{karyawan.gaji}</Text>
                 </View>
             </Card>
