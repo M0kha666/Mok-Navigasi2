@@ -1,4 +1,4 @@
-Folder "navigasi" ada di dalam folder "DataKaryawan"
+Folder "navigasi" & "icon" ada di dalam folder "DataKaryawan"
 
 Terima kasih
 
